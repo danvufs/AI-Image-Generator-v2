@@ -9,7 +9,7 @@
 }
 
 :root {
-  --primary-color: #f9b64d;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 }
 
 body {
@@ -17,12 +17,12 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #333;
-  background: #f4f4f4;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 }
 
 /* Navbar */
 .navbar {
-  background: #333;
+  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -83,26 +83,78 @@ form select {
   margin-bottom: 1rem;
 }
 
-form button {
-  font-size: 20px;
-  padding: 1rem 2rem;
+.button-85 {
+  padding: 0.6em 2em;
   border: none;
-  border-radius: 5px;
-  background: #333;
-  color: #fff;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
   cursor: pointer;
-  margin-top: 20px;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-form button:hover {
-  transform: scale(1.1);
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 5px);
+  height: calc(100% + 6px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-/* Image */
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
 
 .image {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: -3rem;
+  margin-bottom: 3rem;
 }
 
 img {
@@ -115,3 +167,33 @@ img {
   text-align: center;
   margin-top: 1rem;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase form input,
+  form select {
+    width: 360px;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase h1 {
+    font-size: 1.5rem;
+  }
+  }
+
+
+@media (max-width: 768px) {
+  .showcase form input,
+  form select {
+    font-size: 16px;
+  }
+}
+
