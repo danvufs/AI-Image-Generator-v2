@@ -180,6 +180,7 @@ img {
   form select {
     width: 360px;
     max-width: 360px;
+    font-size: 16px;
   }
 }
 
@@ -189,11 +190,4 @@ img {
   }
   }
 
-
-@media (max-width: 768px) {
-  .showcase form input,
-  form select {
-    font-size: 16px;
-  }
-}
 
